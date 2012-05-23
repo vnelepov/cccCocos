@@ -9,15 +9,21 @@
 
 #import "cocos2d.h"
 #import "MenuViewController.h"
+#import "Mosquito.h"
 
-
-@interface LevelRoot : CCLayer{
+@interface LevelRoot : CCLayer <MosquitoLifeDelegate> {
     CCSprite *spriteShips;
+    NSMutableArray *arrayMosquitoes;
 }
 
 @property (retain, nonatomic)  MenuViewController *menuBar;
 @property (retain, nonatomic) CCSprite *spriteShips;
 
+
 - (void)back;
+- (void)startGame;
+- (void)gameCycle;
+- (void)createMosquito;
+
 
 @end

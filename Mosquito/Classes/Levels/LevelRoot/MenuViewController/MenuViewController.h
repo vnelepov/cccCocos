@@ -9,14 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @class LevelRoot;
-@class CaptureAction;
 
 @interface MenuViewController : UIViewController
 
 @property (retain, nonatomic) LevelRoot *menuController;
 @property (nonatomic, retain) UIButton *buttonExit;
-@property (retain) CaptureAction *captureAction;
 
+
+- (IBAction)buttonExit:(id)sender;
 
 
 

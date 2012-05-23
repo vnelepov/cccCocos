@@ -14,7 +14,7 @@
 
 @synthesize menuController;
 @synthesize buttonExit;
-@synthesize captureAction;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,29 +39,6 @@
 {
     [super viewDidLoad];
     
-    self.captureAction = [[CaptureAction alloc] init];
-    [self.captureAction initDevice];
-    [self.captureAction addVideoLayer];
-    [self.captureAction addOutput];
-    AVCaptureVideoDataOutput *captureOutput = [[AVCaptureVideoDataOutput alloc] init];
-    captureOutput.alwaysDiscardsLateVideoFrames = YES;
-    
-//    captureAction.captureLayer.transform = CATransform3DRotate(CATransform3DIdentity, M_PI/.25f, 0, 100, 1);
-    [captureAction.captureLayer setOrientation:AVCaptureVideoOrientationLandscapeRight];
-    CGRect videoLayer = [self.view bounds];
-    [self.captureAction.captureLayer setBounds:videoLayer];
-    [self.captureAction.captureLayer setPosition:CGPointMake(CGRectGetMidX(videoLayer),CGRectGetMidY(videoLayer))];
-    [self.view.layer addSublayer:self.captureAction.captureLayer];
-    
-      
-    
-    [self.captureAction.captureThread startRunning];
-    self.buttonExit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [self.buttonExit setTitle:@"Exit" forState:UIControlStateNormal];
-    self.buttonExit.frame = CGRectMake(10, 40, 120, 40);
-    [self.buttonExit addTarget:self.menuController  action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:self.buttonExit];
     }
 
 - (void)viewDidUnload
@@ -73,11 +50,13 @@
 }
 
 - (void)dealloc{
-    [self.captureAction release];
     [self.menuController release];
     [self.buttonExit release];
     [super dealloc];
 }
 
 
+- (IBAction)buttonExit:(id)sender {
+    [self.menuController back];
+}
 @end
