@@ -3,10 +3,10 @@
 //  CameraCapture
 //
 //  Created by Vladimir Nelepov on 22.05.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 RusWizards LLC. All rights reserved.
 //
+
 #import <AVFoundation/AVFoundation.h>
-#import <Foundation/Foundation.h>
 
 @interface CaptureAction : NSObject
 

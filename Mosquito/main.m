@@ -3,7 +3,7 @@
 //  Mosquito
 //
 //  Created by Vladimir Nelepov on 22.05.12.
-//  Copyright __MyCompanyName__ 2012. All rights reserved.
+//  Copyright RusWizards LLC 2012. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

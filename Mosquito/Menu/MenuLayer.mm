@@ -3,13 +3,20 @@
 //  Mosquito
 //
 //  Created by Vladimir Nelepov on 22.05.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 RusWizards LLC. All rights reserved.
 //
 
 #import "MenuLayer.h"
-#import "MainMenuVC.h"
+
 
 @implementation MenuLayer
+
+@synthesize mainMenu;
+
+- (void) dealloc{
+    [self.mainMenu release];
+    [super dealloc];
+}
 
 +(CCScene *) scene
 {
@@ -20,12 +27,12 @@
 }
 
 -(id) init {
+    
 	if( (self = [super init])) {
-        MainMenuVC *mainMenu = [[MainMenuVC alloc] init];
-        mainMenu.menuController = self;
+
+        mainMenu = [[MainMenuVC alloc] init];
         [[[CCDirector sharedDirector] view] addSubview:mainMenu.view];
-        
-        
+
     }
 	return self;
 }

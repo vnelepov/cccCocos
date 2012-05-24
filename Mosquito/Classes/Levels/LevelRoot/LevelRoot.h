@@ -3,27 +3,30 @@
 //  Mosquito
 //
 //  Created by Vladimir Nelepov on 22.05.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 RusWizards LLC. All rights reserved.
 //
 
 
 #import "cocos2d.h"
 #import "MenuViewController.h"
-#import "Mosquito.h"
+#import "GameObjects.h"
 
 @interface LevelRoot : CCLayer <MosquitoLifeDelegate> {
-    CCSprite *spriteShips;
+    
     NSMutableArray *arrayMosquitoes;
+
 }
 
-@property (retain, nonatomic)  MenuViewController *menuBar;
-@property (retain, nonatomic) CCSprite *spriteShips;
+@property (retain, nonatomic) MenuViewController *menuBar;
+@property (retain, nonatomic) Weapon *weapon;
 
-
-- (void)back;
-- (void)startGame;
+- (void)back; //return to main menu
+- (void)startGame; 
 - (void)gameCycle;
+
 - (void)createMosquito;
+- (void)freezeMosquitoes;
+- (void)unFreezeMosquitoes;
 
-
+- (void)createWeapon;
 @end

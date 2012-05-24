@@ -3,7 +3,7 @@
 //  Mosquito
 //
 //  Created by Vladimir Nelepov on 22.05.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 RusWizards LLC. All rights reserved.
 //
 
 #import "MenuViewController.h"
@@ -14,6 +14,12 @@
 
 @synthesize menuController;
 @synthesize buttonExit;
+
+- (void)dealloc{
+    [self.menuController release];
+    [self.buttonExit release];
+    [super dealloc];
+}
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -49,14 +55,17 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (void)dealloc{
-    [self.menuController release];
-    [self.buttonExit release];
-    [super dealloc];
-}
 
 
 - (IBAction)buttonExit:(id)sender {
     [self.menuController back];
+}
+
+- (IBAction)testt:(id)sender {
+    [self.menuController freezeMosquitoes];       
+}
+
+- (IBAction)tttttt:(id)sender {
+    [self.menuController unFreezeMosquitoes];
 }
 @end

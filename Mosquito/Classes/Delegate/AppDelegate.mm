@@ -3,7 +3,7 @@
 //  Mosquito
 //
 //  Created by Vladimir Nelepov on 22.05.12.
-//  Copyright __MyCompanyName__ 2012. All rights reserved.
+//  Copyright RusWizards LLC 2012. All rights reserved.
 //
 
 #import "cocos2d.h"
@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    window = [[UIWindow alloc]initWithFrame: [[UIScreen mainScreen] bounds]];
+    self.window = [[UIWindow alloc]initWithFrame: [[UIScreen mainScreen] bounds]];
 
     
     CCDirector *director = [CCDirector sharedDirector];
@@ -39,8 +39,8 @@
     [director setDisplayStats:NO];
     
     [viewController setView:glView];
-    [window addSubview:viewController.view];
-    [window makeKeyAndVisible];
+    [self.window addSubview:viewController.view];
+    [self.window makeKeyAndVisible];
     
     Class transition = NSClassFromString(@"CCTransitionFade"); 
    
@@ -102,8 +102,8 @@
 
 - (void) dealloc
 {
-	[window release];
-	[navController release];
+	[self.window release];
+	[self.viewController release];
 
 	[super dealloc];
 }
