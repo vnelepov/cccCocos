@@ -9,6 +9,7 @@
 #import "Mosquito.h"
 
 
+
 @implementation Mosquito
 
 // for release
@@ -34,6 +35,7 @@
             
             self.mosquitoSprite = [CCSprite spriteWithFile:@"Icon-Small.png"];
             self.mosquitoSprite.position = _pos;
+            self.mosquitoSprite.scale = 0.1f;
             [layer addChild:self.mosquitoSprite];
             
             self.countBonus = 5;
@@ -44,6 +46,7 @@
         
             self.mosquitoSprite = [CCSprite spriteWithFile:@"Icon-Small.png"];
             self.mosquitoSprite.position = _pos;
+            self.mosquitoSprite.scale = 0.1f;
             [layer addChild:self.mosquitoSprite];
             
             self.countBonus = 10;
@@ -54,6 +57,7 @@
         
             self.mosquitoSprite = [CCSprite spriteWithFile:@"Icon-Small.png"];
             self.mosquitoSprite.position = _pos;
+            self.mosquitoSprite.scale = 0.1f;
             [layer addChild:self.mosquitoSprite];
             
             self.countBonus = 20;
@@ -63,10 +67,10 @@
         }
         
         // Create animation for mosquito's fly
-        id anim = [CCScaleTo actionWithDuration:2.0f scale:2.0];
+        id anim = [CCScaleTo actionWithDuration:5.0f scale:2.0];
         id actionCallBackFunc = [CCCallFunc actionWithTarget:self selector:@selector(suction)];
         id seqAnims = [CCSequence actions:[[anim copy] autorelease],[[actionCallBackFunc copy] autorelease], nil];
-        
+        self.mosquitoSprite.orderOfArrival = 100;
         [self.mosquitoSprite  runAction:seqAnims];
     
     

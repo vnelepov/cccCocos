@@ -22,7 +22,7 @@
 
 - (void)back; //return to main menu
 - (void)startGame; 
-- (void)gameCycle;
+- (void)gameLoop;
 
 - (void)createMosquito;
 - (void)freezeMosquitoes;

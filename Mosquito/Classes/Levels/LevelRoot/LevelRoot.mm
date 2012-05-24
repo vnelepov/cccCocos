@@ -42,9 +42,10 @@
         self.menuBar.menuController = self;
 
         [[[CCDirector sharedDirector] view] addSubview:self.menuBar.view];       
-        
-        arrayMosquitoes = [[NSMutableArray alloc] init];
-        
+        if (!arrayMosquitoes) {
+            arrayMosquitoes = [[NSMutableArray alloc] init];
+        }
+        srand ( time(NULL) );
         self.isTouchEnabled = YES;
         
         [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
@@ -62,30 +63,14 @@
 #pragma mark - Game actions
 
 - (void)startGame{
-    [self gameCycle];
+    [self createWeapon];
+    [self schedule:@selector(gameLoop) interval:1.0f];
 }
 
-- (void)gameCycle{
-    [self createWeapon];
-    [self createMosquito];
-    int i = 0;
-    int mosScale = 0;
-    while (i!=0) {
-        for (Mosquito *obj in arrayMosquitoes) {
-            mosScale = [obj.mosquitoSprite.actionManager numberOfRunningActionsInTarget:obj.mosquitoSprite];
-            if (mosScale == 0) {
-                [obj.mosquitoSprite removeFromParentAndCleanup:YES];
-                [arrayMosquitoes removeObjectAtIndex:0];
-                i++;
-                
-                
-            }
-            
-        }
-        
-        sleep(2);
+- (void)gameLoop{
+    if ([arrayMosquitoes count]<5) {
+        [self createMosquito];
     }
-    
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
@@ -97,12 +82,11 @@
 #pragma mark - Work with mosquitoes
 
 - (void)createMosquito{
-
-    Mosquito *mosquito = [[Mosquito alloc] initWithType:Normal andPosition:ccp(100,100) aboveLayer:self];
-    [mosquito setDelegate:self];
-    [arrayMosquitoes addObject:mosquito];
-    [mosquito release];
-    mosquito = [[Mosquito alloc] initWithType:Normal andPosition:ccp(200,200) aboveLayer:self];
+    int x,y;
+    x = rand() % 420 + 30;
+    y = rand() % 280 + 30;
+    
+    Mosquito *mosquito = [[Mosquito alloc] initWithType:Normal andPosition:ccp(x,y) aboveLayer:self];
     [mosquito setDelegate:self];
     [arrayMosquitoes addObject:mosquito];
     [mosquito release];
@@ -111,6 +95,7 @@
 }
 
 - (void) freezeMosquitoes{
+    [self pauseSchedulerAndActions];
     for (Mosquito *obj in arrayMosquitoes) {
         [obj freeze];
     }
@@ -118,6 +103,7 @@
 }
 
 - (void) unFreezeMosquitoes{
+    [self resumeSchedulerAndActions];
     for (Mosquito *obj in arrayMosquitoes) {
         [obj unFreeze];
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C9D7E30156E2E2A00A84A99 /* Weapon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D7E2F156E2E2A00A84A99 /* Weapon.mm */; };
+		5C9D7E36156E583400A84A99 /* MenuLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D7E35156E583400A84A99 /* MenuLayer.mm */; };
 		5CAD4626156B67B5001FA5FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CAD4625156B67B5001FA5FA /* QuartzCore.framework */; };
 		5CAD4628156B67B5001FA5FA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CAD4627156B67B5001FA5FA /* OpenGLES.framework */; };
 		5CAD462A156B67B5001FA5FA /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CAD4629156B67B5001FA5FA /* OpenAL.framework */; };
@@ -129,7 +130,6 @@
 		5CAD47A7156B67B8001FA5FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD47A6156B67B8001FA5FA /* main.m */; };
 		5CAD47C1156B6B6C001FA5FA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CAD47C0156B6B6C001FA5FA /* Default.png */; };
 		5CAD47CB156B6C6F001FA5FA /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD47CA156B6C6F001FA5FA /* AppDelegate.mm */; };
-		5CAD47D5156B70B4001FA5FA /* MenuLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD47D4156B70B4001FA5FA /* MenuLayer.mm */; };
 		5CAD47E1156B741F001FA5FA /* RootMenuVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD47E0156B741F001FA5FA /* RootMenuVC.mm */; };
 		5CAD47E8156B74B2001FA5FA /* MainMenuVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD47E6156B74B2001FA5FA /* MainMenuVC.mm */; };
 		5CAD47E9156B74B2001FA5FA /* MainMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CAD47E7156B74B2001FA5FA /* MainMenuVC.xib */; };
@@ -150,6 +150,8 @@
 		5C9D7E2E156E2E2A00A84A99 /* Weapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Weapon.h; path = Classes/Levels/Objects/Weapon/Weapon.h; sourceTree = "<group>"; };
 		5C9D7E2F156E2E2A00A84A99 /* Weapon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Weapon.mm; path = Classes/Levels/Objects/Weapon/Weapon.mm; sourceTree = "<group>"; };
 		5C9D7E33156E54C700A84A99 /* GameObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjects.h; path = Classes/Levels/Objects/GameObjects.h; sourceTree = "<group>"; };
+		5C9D7E34156E582C00A84A99 /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuLayer.h; path = Classes/Menu/MenuLayer.h; sourceTree = "<group>"; };
+		5C9D7E35156E583400A84A99 /* MenuLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MenuLayer.mm; path = Classes/Menu/MenuLayer.mm; sourceTree = "<group>"; };
 		5CAD4621156B67B5001FA5FA /* Mosquito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mosquito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CAD4625156B67B5001FA5FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5CAD4627156B67B5001FA5FA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -404,8 +406,6 @@
 		5CAD47C0156B6B6C001FA5FA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Splash/Default.png; sourceTree = "<group>"; };
 		5CAD47C9156B6C6F001FA5FA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/Delegate/AppDelegate.h; sourceTree = "<group>"; };
 		5CAD47CA156B6C6F001FA5FA /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Classes/Delegate/AppDelegate.mm; sourceTree = "<group>"; };
-		5CAD47D3156B70B4001FA5FA /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuLayer.h; path = Menu/MenuLayer.h; sourceTree = "<group>"; };
-		5CAD47D4156B70B4001FA5FA /* MenuLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MenuLayer.mm; path = Menu/MenuLayer.mm; sourceTree = "<group>"; };
 		5CAD47DF156B741F001FA5FA /* RootMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootMenuVC.h; path = Classes/Menu/RootMenuVC/RootMenuVC.h; sourceTree = "<group>"; };
 		5CAD47E0156B741F001FA5FA /* RootMenuVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RootMenuVC.mm; path = Classes/Menu/RootMenuVC/RootMenuVC.mm; sourceTree = "<group>"; };
 		5CAD47E5156B74B2001FA5FA /* MainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuVC.h; path = Classes/Menu/Main/MainMenuVC.h; sourceTree = "<group>"; };
@@ -908,8 +908,8 @@
 		5CAD47D2156B7007001FA5FA /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				5CAD47D3156B70B4001FA5FA /* MenuLayer.h */,
-				5CAD47D4156B70B4001FA5FA /* MenuLayer.mm */,
+				5C9D7E34156E582C00A84A99 /* MenuLayer.h */,
+				5C9D7E35156E583400A84A99 /* MenuLayer.mm */,
 				5CAD47DE156B73E7001FA5FA /* RootMenuVC */,
 				5CAD47D6156B70FC001FA5FA /* Main */,
 			);
@@ -1213,7 +1213,6 @@
 				5CAD47A2156B67B8001FA5FA /* vec4.c in Sources */,
 				5CAD47A7156B67B8001FA5FA /* main.m in Sources */,
 				5CAD47CB156B6C6F001FA5FA /* AppDelegate.mm in Sources */,
-				5CAD47D5156B70B4001FA5FA /* MenuLayer.mm in Sources */,
 				5CAD47E1156B741F001FA5FA /* RootMenuVC.mm in Sources */,
 				5CAD47E8156B74B2001FA5FA /* MainMenuVC.mm in Sources */,
 				5CAD47ED156B7544001FA5FA /* RootViewController.m in Sources */,
@@ -1223,6 +1222,7 @@
 				5CAD49B0156BE189001FA5FA /* Level1.mm in Sources */,
 				5CDC45B0156CD6D100C7D8C4 /* Mosquito.mm in Sources */,
 				5C9D7E30156E2E2A00A84A99 /* Weapon.mm in Sources */,
+				5C9D7E36156E583400A84A99 /* MenuLayer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
