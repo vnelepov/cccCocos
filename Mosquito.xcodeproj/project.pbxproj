@@ -149,7 +149,7 @@
 /* Begin PBXFileReference section */
 		5C9D7E2E156E2E2A00A84A99 /* Weapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Weapon.h; path = Classes/Levels/Objects/Weapon/Weapon.h; sourceTree = "<group>"; };
 		5C9D7E2F156E2E2A00A84A99 /* Weapon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Weapon.mm; path = Classes/Levels/Objects/Weapon/Weapon.mm; sourceTree = "<group>"; };
-		5C9D7E32156E35D700A84A99 /* GameObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObjects.h; sourceTree = "<group>"; };
+		5C9D7E33156E54C700A84A99 /* GameObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjects.h; path = Classes/Levels/Objects/GameObjects.h; sourceTree = "<group>"; };
 		5CAD4621156B67B5001FA5FA /* Mosquito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mosquito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CAD4625156B67B5001FA5FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5CAD4627156B67B5001FA5FA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -995,9 +995,9 @@
 		5CDC45A8156CD62100C7D8C4 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				5C9D7E33156E54C700A84A99 /* GameObjects.h */,
 				5C9D7E2C156E2DE900A84A99 /* Weapon */,
 				5CDC45AD156CD6BB00C7D8C4 /* Mosquito */,
-				5C9D7E32156E35D700A84A99 /* GameObjects.h */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
