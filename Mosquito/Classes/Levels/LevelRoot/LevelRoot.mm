@@ -68,13 +68,16 @@
 }
 
 - (void)gameLoop{
-    if ([arrayMosquitoes count]<5) {
+    if ([arrayMosquitoes count]<10) {
         [self createMosquito];
+        
+
+        
     }
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
-    [self.weapon shotAnimateOnLayer];
+    [self.weapon shotAnimate];
     return YES;
 }
 
@@ -82,13 +85,33 @@
 #pragma mark - Work with mosquitoes
 
 - (void)createMosquito{
-    int x,y;
+    int x,y,z;
     x = rand() % 420 + 30;
     y = rand() % 280 + 30;
+
+
     
+    // definition mosquitoes order
+    int min_z = 1000000;
+    
+    for(CCSprite *sprite in self.children) {
+        if ([sprite isKindOfClass:[CCSprite class]]) 
+            if (sprite.tag == 999999 && min_z > sprite.zOrder) 
+               min_z = sprite.zOrder;
+    }
+    
+    z = min_z-1;
+    if (z < 1) z = 1000000;
+
     Mosquito *mosquito = [[Mosquito alloc] initWithType:Normal andPosition:ccp(x,y) aboveLayer:self];
     [mosquito setDelegate:self];
+    mosquito.mosquitoSprite.tag = 999999;
     [arrayMosquitoes addObject:mosquito];
+
+    // Set new mosquito under others mosquito
+    [self reorderChild:mosquito.mosquitoSprite z:z];
+    
+    
     [mosquito release];
 
 
@@ -123,7 +146,6 @@
 - (void)createWeapon{
     
     self.weapon = [[Weapon alloc] initWithType:OneTrunk aboveLayer:self];
-    [self.weapon shotAnimateOnLayer];
     
 }
 

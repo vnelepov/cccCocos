@@ -36,7 +36,7 @@
     
     [director setView:glView];
     [director setAnimationInterval:1.0 / 60];
-    [director setDisplayStats:NO];
+    [director setDisplayStats:YES];
     
     [viewController setView:glView];
     [self.window addSubview:viewController.view];

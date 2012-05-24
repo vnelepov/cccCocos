@@ -3,7 +3,7 @@
 //  Mosquito
 //
 //  Created by Vladimir Nelepov on 24.05.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 RusWizards LLC. All rights reserved.
 //
 
 #import "Weapon.h"
@@ -20,12 +20,12 @@
 }
 - (id)initWithType:(WEAPONTYPE) _type aboveLayer:(CCLayer *) layer{
     if (self = [super init]) {
-
+        // z:1000000 for location weapon over others sprite
         if (_type == OneTrunk) {
             
             self.weaponSprite = [CCSprite spriteWithFile:@"Icon-Small.png"];
             self.weaponSprite.position = ccp(240,20);
-            [layer addChild:self.weaponSprite];
+            [layer addChild:self.weaponSprite z:1000000];
             
             self.power = 1;
             
@@ -33,7 +33,7 @@
             
             self.weaponSprite = [CCSprite spriteWithFile:@"Icon-Small.png"];
             self.weaponSprite.position = ccp(240,20);
-            [layer addChild:self.weaponSprite];
+            [layer addChild:self.weaponSprite z:1000000];
         
             self.power = 2;
         } 
@@ -42,13 +42,19 @@
     return self;
 }
 
-- (void)shotAnimateOnLayer{
+- (void)shotAnimate{
 
     CCSprite *sprite = [CCSprite spriteWithFile:@"Icon-Small.png"];
     sprite.position = ccp(14.5,30);
-    [weaponSprite addChild:sprite];
+    [self.weaponSprite addChild:sprite z:1000000 tag:999999];
     id anim = [CCFadeTo actionWithDuration:0.7f opacity:0.0f];
-    [sprite  runAction:anim];        
+    id actionCallBackFunc = [CCCallFunc actionWithTarget:self selector:@selector(clearFromLayer)];
+    id seqAnims = [CCSequence actions:[[anim copy] autorelease],[[actionCallBackFunc copy] autorelease], nil];
+    [sprite  runAction:seqAnims];        
 }    
+
+- (void)clearFromLayer{
+      [self.weaponSprite removeAllChildrenWithCleanup:YES];
+}
 
 @end

@@ -35,6 +35,7 @@ enum MOSQUITOTYPE {
 
 - (void)killYourSelfWithAnimation;
 - (void)flyAway;
+- (void)clearFromLayer;
 
 - (void)freeze;
 - (void)unFreeze;

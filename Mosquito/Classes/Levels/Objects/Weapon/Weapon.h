@@ -3,7 +3,7 @@
 //  Mosquito
 //
 //  Created by Vladimir Nelepov on 24.05.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 RusWizards LLC. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -19,5 +19,7 @@ enum WEAPONTYPE {
 @property (assign, nonatomic) NSInteger power;
 
 - (id)initWithType:(WEAPONTYPE) _type aboveLayer:(CCLayer *) layer;
-- (void)shotAnimateOnLayer;
+- (void)shotAnimate;
+- (void)clearFromLayer;
+
 @end

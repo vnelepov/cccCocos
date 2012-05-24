@@ -17,7 +17,8 @@
         // Set backgroud for level
         CCSprite* levelBackground = [CCSprite spriteWithFile:@"bg_1.jpg"];
         [levelBackground setPosition:ccp(240, 160)];
-        [self addChild:levelBackground];
+        // z:0 for location background under others sprite
+        [self addChild:levelBackground z:0];
         
         [self startGame];
         

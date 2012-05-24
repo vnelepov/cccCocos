@@ -89,12 +89,20 @@
 // mosquito fly away after sting
 - (void)flyAway{
     id anim = [CCFadeTo actionWithDuration:2.0f opacity:0.0f];
-    [self.mosquitoSprite  runAction:anim];
+    id actionCallBackFunc = [CCCallFunc actionWithTarget:self selector:@selector(clearFromLayer)];
+    id seqAnims = [CCSequence actions:[[anim copy] autorelease],[[actionCallBackFunc copy] autorelease], nil];
+    [self.mosquitoSprite  runAction:seqAnims];
 }
 
+- (void)clearFromLayer{
+    [self.mosquitoSprite removeFromParentAndCleanup:YES];
+
+}
 - (void)killYourSelfWithAnimation{
     id anim = [CCFadeTo actionWithDuration:2.0f opacity:0.0f];
-    [self.mosquitoSprite  runAction:anim];
+    id actionCallBackFunc = [CCCallFunc actionWithTarget:self selector:@selector(clearFromLayer)];
+    id seqAnims = [CCSequence actions:[[anim copy] autorelease],[[actionCallBackFunc copy] autorelease], nil];
+    [self.mosquitoSprite  runAction:seqAnims];
 }
 
 // Mosquito's sting
