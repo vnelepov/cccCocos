@@ -36,7 +36,7 @@
             [layer addChild:self.weaponSprite];
         
             self.power = 2;
-        }
+        } 
 
     }
     return self;
@@ -47,7 +47,6 @@
     CCSprite *sprite = [CCSprite spriteWithFile:@"Icon-Small.png"];
     sprite.position = ccp(14.5,30);
     [weaponSprite addChild:sprite];
-    // Create animation for mosquito's fly
     id anim = [CCFadeTo actionWithDuration:0.7f opacity:0.0f];
     [sprite  runAction:anim];        
 }    
