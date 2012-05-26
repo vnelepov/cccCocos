@@ -8,6 +8,7 @@
 
 #import "Mosquito.h"
 
+#define TIME_LIFE_MOSQUITOES 5.0f // seconds
 
 
 @implementation Mosquito
@@ -67,10 +68,9 @@
         }
         
         // Create animation for mosquito's fly
-        id anim = [CCScaleTo actionWithDuration:5.0f scale:2.0];
+        id anim = [CCScaleTo actionWithDuration:TIME_LIFE_MOSQUITOES scale:2.0];
         id actionCallBackFunc = [CCCallFunc actionWithTarget:self selector:@selector(suction)];
         id seqAnims = [CCSequence actions:[[anim copy] autorelease],[[actionCallBackFunc copy] autorelease], nil];
-        self.mosquitoSprite.orderOfArrival = 100;
         [self.mosquitoSprite  runAction:seqAnims];
     
     
@@ -88,7 +88,7 @@
 
 // mosquito fly away after sting
 - (void)flyAway{
-    id anim = [CCFadeTo actionWithDuration:2.0f opacity:0.0f];
+    id anim = [CCFadeTo actionWithDuration:1.0f opacity:0.0f];
     id actionCallBackFunc = [CCCallFunc actionWithTarget:self selector:@selector(clearFromLayer)];
     id seqAnims = [CCSequence actions:[[anim copy] autorelease],[[actionCallBackFunc copy] autorelease], nil];
     [self.mosquitoSprite  runAction:seqAnims];
@@ -99,7 +99,7 @@
 
 }
 - (void)killYourSelfWithAnimation{
-    id anim = [CCFadeTo actionWithDuration:2.0f opacity:0.0f];
+    id anim = [CCFadeTo actionWithDuration:1.0f opacity:0.0f];
     id actionCallBackFunc = [CCCallFunc actionWithTarget:self selector:@selector(clearFromLayer)];
     id seqAnims = [CCSequence actions:[[anim copy] autorelease],[[actionCallBackFunc copy] autorelease], nil];
     [self.mosquitoSprite  runAction:seqAnims];

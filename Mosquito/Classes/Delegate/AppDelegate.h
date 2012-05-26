@@ -9,15 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "cocos2d.h"
 #import "RootViewController.h"
-
+#import "CaptureAction.h"
+#import "AVFoundation/AVFoundation.h"
 @interface AppController : NSObject <UIApplicationDelegate, CCDirectorDelegate>
-{
-	UIWindow *window;
-	UINavigationController *navController;
 
-}
 
 @property (nonatomic, retain) UIWindow *window;
 @property (readonly) RootViewController *viewController;
+@property (nonatomic, retain) CaptureAction *captureAction;
+@property (nonatomic, retain)  CCDirector *director;
 
 @end

@@ -208,7 +208,11 @@ static CCDirector *_sharedDirector = nil;
 	[self setProjection: projection_];
 
 	// set other opengl default values
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+	// glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+
+    view_.opaque = NO;
+	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+
 }
 
 //

@@ -26,7 +26,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -59,6 +59,8 @@
 
 - (IBAction)buttonExit:(id)sender {
     [self.menuController back];
+
+   
 }
 
 - (IBAction)testt:(id)sender {

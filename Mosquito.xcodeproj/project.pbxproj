@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5C9D7E30156E2E2A00A84A99 /* Weapon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D7E2F156E2E2A00A84A99 /* Weapon.mm */; };
 		5C9D7E36156E583400A84A99 /* MenuLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D7E35156E583400A84A99 /* MenuLayer.mm */; };
+		5CAACCEE156F610800EB6FCF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CAACCED156F610800EB6FCF /* CoreLocation.framework */; };
+		5CAACCF9156F8A6B00EB6FCF /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CAACCF8156F8A6B00EB6FCF /* CoreMedia.framework */; };
 		5CAD4626156B67B5001FA5FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CAD4625156B67B5001FA5FA /* QuartzCore.framework */; };
 		5CAD4628156B67B5001FA5FA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CAD4627156B67B5001FA5FA /* OpenGLES.framework */; };
 		5CAD462A156B67B5001FA5FA /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CAD4629156B67B5001FA5FA /* OpenAL.framework */; };
@@ -152,6 +154,8 @@
 		5C9D7E33156E54C700A84A99 /* GameObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjects.h; path = Classes/Levels/Objects/GameObjects.h; sourceTree = "<group>"; };
 		5C9D7E34156E582C00A84A99 /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuLayer.h; path = Classes/Menu/MenuLayer.h; sourceTree = "<group>"; };
 		5C9D7E35156E583400A84A99 /* MenuLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MenuLayer.mm; path = Classes/Menu/MenuLayer.mm; sourceTree = "<group>"; };
+		5CAACCED156F610800EB6FCF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5CAACCF8156F8A6B00EB6FCF /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		5CAD4621156B67B5001FA5FA /* Mosquito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mosquito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CAD4625156B67B5001FA5FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5CAD4627156B67B5001FA5FA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -436,6 +440,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CAACCF9156F8A6B00EB6FCF /* CoreMedia.framework in Frameworks */,
+				5CAACCEE156F610800EB6FCF /* CoreLocation.framework in Frameworks */,
 				5CAD49B2156BE237001FA5FA /* CoreVideo.framework in Frameworks */,
 				5CAD4626156B67B5001FA5FA /* QuartzCore.framework in Frameworks */,
 				5CAD4628156B67B5001FA5FA /* OpenGLES.framework in Frameworks */,
@@ -464,7 +470,6 @@
 		5CAD4616156B67B5001FA5FA = {
 			isa = PBXGroup;
 			children = (
-				5CAD49B1156BE236001FA5FA /* CoreVideo.framework */,
 				5CAD4637156B67B5001FA5FA /* Mosquito */,
 				5CAD4624156B67B5001FA5FA /* Frameworks */,
 				5CAD4622156B67B5001FA5FA /* Products */,
@@ -482,6 +487,9 @@
 		5CAD4624156B67B5001FA5FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5CAACCF8156F8A6B00EB6FCF /* CoreMedia.framework */,
+				5CAACCED156F610800EB6FCF /* CoreLocation.framework */,
+				5CAD49B1156BE236001FA5FA /* CoreVideo.framework */,
 				5CAD4625156B67B5001FA5FA /* QuartzCore.framework */,
 				5CAD4627156B67B5001FA5FA /* OpenGLES.framework */,
 				5CAD4629156B67B5001FA5FA /* OpenAL.framework */,

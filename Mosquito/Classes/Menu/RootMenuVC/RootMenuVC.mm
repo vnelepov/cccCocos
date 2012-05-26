@@ -21,6 +21,7 @@
                 [view removeFromSuperview];
                
             }
+        
     }
     return self;
 }

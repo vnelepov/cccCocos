@@ -17,6 +17,7 @@
     UIButton *button = (UIButton*) sender;
     
     CCScene *scene = [CCScene node];
+
     switch (button.tag)
     {
 		case 1: {
